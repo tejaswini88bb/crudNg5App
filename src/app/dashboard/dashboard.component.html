@@ -1,0 +1,29 @@
+<div>
+    <a routerLink="/">Go Back</a>
+</div>
+<div>
+    <a routerLink="/product">Add Product</a>
+</div>
+<h1>Products</h1>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Color</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{product.id}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.color}}</td>
+                <td><a [routerLink]="['/updateProduct', product.id]">Update</a></td>
+                <td (click)="deleteProduct(product.id)">Delete</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
